@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Career Guidance System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <span class="logo-icon">🎯</span>
+                    <span class="logo-text">CareerAI</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/test" class="nav-link {% if request.path == '/test' %}active{% endif %}">Take Test</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/features" class="nav-link {% if request.path == '/features' %}active{% endif %}">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link {% if request.path == '/contact' %}active{% endif %}">Contact</a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>CareerAI</h4>
+                <p>Empowering students with data-driven career guidance</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/test">Take Test</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@careerai.com</p>
+                <p>Phone: +91 63028 97080</p>
+                <p>Phone: +91 91211 04330</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CareerAI. All rights reserved. | Powered by Machine Learning</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% block extra_script %}{% endblock %}
+</body>
+</html>

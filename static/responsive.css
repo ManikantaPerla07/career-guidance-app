@@ -1,0 +1,132 @@
+/* =========== MOBILE/TABLET BREAKPOINTS =========== */
+
+/* Tablet and small laptops */
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 10px;
+    font-size: 0.82em;
+  }
+
+  .nav-logo a {
+    font-size: 1.28em;
+  }
+
+  .cta-button {
+    font-size: 1.08em;
+    width: 100%;
+    padding: 14px 28px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .section,
+  .hero-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card-grid,
+  .input-grid,
+  .stats-grid,
+  .features-cards,
+  .why-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .story-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .tech-card {
+    min-width: 100%;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-logo a {
+    font-size: 1.14em;
+  }
+
+  .hero-content h1,
+  .section-title {
+    font-size: 1.45em;
+  }
+
+  .hero-content p,
+  .section-subtitle,
+  .cta-button {
+    font-size: 0.96em;
+  }
+
+  .card-row {
+    flex-direction: column;
+  }
+
+  .feature-icon,
+  .stats-big {
+    font-size: 2em;
+  }
+
+  .glass-card,
+  .card-glass,
+  .test-panel {
+    padding: 18px 6vw;
+  }
+
+  .footer {
+    padding: 35px 8px 9px;
+  }
+
+  .footer-section {
+    font-size: 0.97em;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 80px 6vw 60px;
+  }
+
+  h2 {
+    font-size: 1.1em !important;
+  }
+
+  .faq-question {
+    font-size: 1em;
+    padding: 13px 11px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+  .hero-content h1,
+  .section-title {
+    font-size: 1.18em;
+  }
+
+  .cta-button {
+    padding: 9px 13px;
+  }
+
+  .footer {
+    padding: 18px 4px 3px;
+  }
+
+  .footer-section {
+    font-size: 0.9em;
+  }
+
+  .hero-section {
+    padding: 70px 4vw 50px;
+  }
+}

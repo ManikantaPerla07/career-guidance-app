@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Career Test - AI Career Guidance System{% endblock %}
+
+{% block content %}
+<div class="test-container">
+    <h1>Career Aptitude & Personality Test</h1>
+    <p class="test-subtitle">Answer honestly for the most accurate career recommendations</p>
+
+    <form id="careerForm" class="career-form">
+        <fieldset class="form-fieldset">
+            <legend>📊 Personality Traits (Rate 0-10)</legend>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="O_score">Openness</label>
+                    <input type="number" id="O_score" name="O_score" min="0" max="10" step="0.01" value="5" required>
+                    <small>Your curiosity and openness to new ideas</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="C_score">Conscientiousness</label>
+                    <input type="number" id="C_score" name="C_score" min="0" max="10" step="0.01" value="5" required>
+                    <small>Your organization and dependability</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="E_score">Extroversion</label>
+                    <input type="number" id="E_score" name="E_score" min="0" max="10" step="0.01" value="5" required>
+                    <small>Your outgoingness and social comfort</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="A_score">Agreeableness</label>
+                    <input type="number" id="A_score" name="A_score" min="0" max="10" step="0.01" value="5" required>
+                    <small>Your cooperativeness and empathy</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="N_score">Neuroticism</label>
+                    <input type="number" id="N_score" name="N_score" min="0" max="10" step="0.01" value="5" required>
+                    <small>Your emotional stability</small>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+            <legend>🧠 Aptitude Scores (Rate 0-10)</legend>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="Numerical Aptitude">Numerical Aptitude</label>
+                    <input type="number" id="Numerical Aptitude" name="Numerical Aptitude" min="0" max="10" step="0.01" value="5" required>
+                    <small>Math and numerical problem-solving skills</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="Spatial Aptitude">Spatial Aptitude</label>
+                    <input type="number" id="Spatial Aptitude" name="Spatial Aptitude" min="0" max="10" step="0.01" value="5" required>
+                    <small>Visualization and 3D space understanding</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="Perceptual Aptitude">Perceptual Aptitude</label>
+                    <input type="number" id="Perceptual Aptitude" name="Perceptual Aptitude" min="0" max="10" step="0.01" value="5" required>
+                    <small>Attention to detail and observation</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="Abstract Reasoning">Abstract Reasoning</label>
+                    <input type="number" id="Abstract Reasoning" name="Abstract Reasoning" min="0" max="10" step="0.01" value="5" required>
+                    <small>Logical thinking and pattern recognition</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="Verbal Reasoning">Verbal Reasoning</label>
+                    <input type="number" id="Verbal Reasoning" name="Verbal Reasoning" min="0" max="10" step="0.01" value="5" required>
+                    <small>Language comprehension and verbal skills</small>
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">
+            <span class="btn-text">Get Career Recommendations</span>
+            <span class="btn-loader" style="display:none;">Loading...</span>
+        </button>
+    </form>
+
+    <section id="resultsSection" class="results-section" style="display: none;">
+        <h2>✨ Your Top Career Matches</h2>
+        <div id="resultsList" class="results-list"></div>
+    </section>
+
+    <section id="errorSection" class="error-section" style="display: none;">
+        <p id="errorMessage"></p>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_script %}
+<script src="{{ url_for('static', filename='test.js') }}"></script>
+{% endblock %}
